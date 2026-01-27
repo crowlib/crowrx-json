@@ -1,0 +1,17 @@
+{
+    "name": "CrowRx.Json.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d16bdc72de9240f4cb4d6d700c070e78",
+        "GUID:52aa9bb0ccb007e4c8f11ca1f3f68355"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
