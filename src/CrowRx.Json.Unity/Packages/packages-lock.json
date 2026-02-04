@@ -63,7 +63,7 @@
       "hash": "c2af83c9d4f8cdaada9d4a0e94de2f195d8e1d01"
     },
     "com.unity.ai.navigation": {
-      "version": "2.0.9",
+      "version": "2.0.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -119,7 +119,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.17.0",
+      "version": "1.18.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
