@@ -9,7 +9,7 @@
         "com.cysharp.unitask": "2.5.10",
         "com.cysharp.zlinq": "1.5.4"
       },
-      "hash": "5936065a6d440b4524488b73955ead939ae74c37"
+      "hash": "30607d1cf6bfbbe284cd8c7f95f050750dfab1a2"
     },
     "com.crowlib.crowrx.pool": {
       "version": "https://github.com/crowlib/crowrx-pool.git?path=src/CrowRx.Pool.Unity/Assets/CrowRx.Pool",
@@ -20,7 +20,7 @@
         "com.cysharp.unitask": "2.5.10",
         "com.cysharp.r3": "1.3.0"
       },
-      "hash": "e17a33b16917b22278eac3aaeb4355c43c2cc09c"
+      "hash": "5953dc8324a23e03c8a445a9aee6cef306b64ec5"
     },
     "com.crowlib.crowrx.utility": {
       "version": "https://github.com/crowlib/crowrx-utility.git?path=src/CrowRx.Utility.Unity/Assets/CrowRx.Utility",

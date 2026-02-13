@@ -7,17 +7,14 @@ using ZLinq;
 using System.Linq;
 #endif
 using System.Reflection;
-using UnityEngine;
+using System.Diagnostics;
 
 
 namespace CrowRx.Json
 {
-    using Utility;
-
-
     internal static class Deserializer
     {
-        private static DefaultActivator _defaultActivator;
+        private static DefaultActivator? _defaultActivator;
 
 
         private static DefaultActivator DefaultActivator => _defaultActivator ??= new DefaultActivator();
@@ -171,9 +168,17 @@ namespace CrowRx.Json
 
             return true;
 
-            static bool TryGetKey(Type keyType, string jsonKey, out object key, ICustomActivator activator) =>
-                (keyType.IsEnum && Enum.TryParse(keyType, jsonKey, false, out key)) ||
-                TryConvertValue(keyType, jsonKey, out key, activator);
+            static bool TryGetKey(Type keyType, string jsonKey, out object key, ICustomActivator activator)
+            {
+                if (keyType.IsEnum)
+                {
+                    key = Enum.Parse(keyType, jsonKey, false);
+
+                    return true;
+                }
+
+                return TryConvertValue(keyType, jsonKey, out key, activator);
+            }
         }
 
         private static bool TryParseAsList(IList objectAsList, Type elementType, List<object> jsonObjectAsList, ICustomActivator activator, bool isAppend)
@@ -247,7 +252,13 @@ namespace CrowRx.Json
                     return true;
 
                 case Dictionary<string, object> jsonObjectAsDictionary:
-                    list = jsonObjectAsDictionary.AsValueEnumerable().Select(pair => pair.Value).ToList();
+                    list =
+                        jsonObjectAsDictionary
+#if USING_ZLINQ
+                        .AsValueEnumerable()
+#endif
+                        .Select(pair => pair.Value)
+                        .ToList();
                     return true;
             }
 

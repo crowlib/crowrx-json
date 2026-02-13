@@ -1,5 +1,5 @@
 {
-    "name": "CrowRx.Json",
+    "name": "CrowRx.Json.Unity",
     "rootNamespace": "",
     "references": [
         "GUID:d16bdc72de9240f4cb4d6d700c070e78",

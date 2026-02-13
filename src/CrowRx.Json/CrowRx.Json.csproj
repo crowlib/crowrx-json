@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>9</LangVersion>
+		<Nullable>enable</Nullable>
+
+		<!-- NuGet -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<VersionPrefix>1.0.0</VersionPrefix>
+
+		<!-- Native 방지 -->
+		<UseNativeCompilation>false</UseNativeCompilation>
+
+		<RootNamespace>CrowRx.Json</RootNamespace>
+		<AssemblyName>CrowRx.Json</AssemblyName>
+		<PackageId>CrowRx.Json</PackageId>
+		<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+
+		<Title>CrowRx.Json</Title>
+		<PackageTags>unity unity-editor</PackageTags>
+		<Authors>newhory</Authors>
+		<Description>A json library for CrowRx. This package is intended for use with Unity3D 6.0 or newer only.</Description>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Version>$(VersionPrefix)</Version>
+		<AssemblyTitle>CrowRx.Json</AssemblyTitle>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CrowRx.Core" Version="1.0.0"/>
+		<PackageReference Include="CrowRx.Pool" Version="1.0.0"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="LICENSE" Pack="true" PackagePath=""/>
+		<None Include="README.md" Pack="true" PackagePath=""/>
+	</ItemGroup>
+
+</Project>
