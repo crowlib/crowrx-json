@@ -1,6 +1,6 @@
-﻿# CrowRx.Json
+﻿# CrowRx
 
-A json library for CrowRx.
+A core library For CrowRx.
 
 ## Requirements
 - Unity 6.0 or newer
