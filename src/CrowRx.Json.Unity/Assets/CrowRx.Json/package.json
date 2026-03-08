@@ -1,6 +1,6 @@
 {
     "name": "com.crowlib.crowrx.json",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "displayName": "CrowRx Json",
     "author": {
         "name": "Hory",
@@ -10,8 +10,8 @@
     "description": "CrowRx Json.",
     "category": "Scripting",
     "dependencies": {
-        "com.crowlib.crowrx": "1.0.0",
-        "com.crowlib.crowrx.pool" : "1.0.0",
+        "com.crowlib.crowrx": "1.0.2",
+        "com.crowlib.crowrx.pool" : "1.0.2",
         "com.crowlib.crowrx.utility" : "1.0.0",
         "com.cysharp.zlinq": "1.5.4"
     }
