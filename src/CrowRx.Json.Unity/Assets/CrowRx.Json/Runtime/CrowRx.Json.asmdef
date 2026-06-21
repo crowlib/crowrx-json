@@ -1,10 +1,7 @@
 {
     "name": "CrowRx.Json.Unity",
     "rootNamespace": "",
-    "references": [
-        "GUID:d16bdc72de9240f4cb4d6d700c070e78",
-        "GUID:c71612acbe346a344abbc0dcfdf4f0bd"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -19,5 +16,5 @@
             "define": "USING_ZLINQ"
         }
     ],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

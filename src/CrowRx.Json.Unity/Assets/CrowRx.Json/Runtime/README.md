@@ -1,11 +1,15 @@
-# CrowRx.Json
+# CrowRx.Json for Unity
 
-## Dependency
+Install the `CrowRx.Json` NuGet package with NuGetForUnity. The core assembly has no `UnityEngine` dependency.
 
-    CrowRx
-    CrowRx.Pool.Collections
-    CrowRx.Pool.Text
+For Medium or High managed stripping, preserve DTO members and constructors used through reflection. Use `[UnityEngine.Scripting.Preserve]` or a project `link.xml`, for example:
 
-## Components For Editor Only
+```xml
+<linker>
+  <assembly fullname="Game.Runtime">
+    <type fullname="Game.SaveData" preserve="all" />
+  </assembly>
+</linker>
+```
 
-    Sample
+The package does not include converters for Unity value types. Register application-specific converters through immutable `JsonSerializerOptions`.

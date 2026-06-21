@@ -1,0 +1,6 @@
+{
+  "name": "CrowRx.Json.UnitySmoke.Runtime",
+  "references": [
+    "CrowRx.Json"
+  ]
+}

@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+BenchmarkDotNet.Artifacts/
+artifacts/
+src/CrowRx.Json.Unity/Assets/Packages/
+src/CrowRx.Json.Unity/Assets/Packages.meta
+src/CrowRx.Json.Unity/Library/
+src/CrowRx.Json.Unity/Temp/
+src/CrowRx.Json.Unity/Logs/
+src/CrowRx.Json.Unity/UserSettings/

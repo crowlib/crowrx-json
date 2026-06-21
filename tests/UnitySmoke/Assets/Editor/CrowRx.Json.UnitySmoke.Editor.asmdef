@@ -1,0 +1,9 @@
+{
+  "name": "CrowRx.Json.UnitySmoke.Editor",
+  "references": [
+    "CrowRx.Json.UnitySmoke.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

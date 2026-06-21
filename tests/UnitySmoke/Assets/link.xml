@@ -1,0 +1,3 @@
+<linker>
+  <assembly fullname="CrowRx.Json.UnitySmoke.Runtime" preserve="all" />
+</linker>

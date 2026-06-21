@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="CrowRx.Json.csproj" />
+  <Project Path="../CrowRx.Json.Tests/CrowRx.Json.Tests.csproj" />
+  <Project Path="../CrowRx.Json.Benchmarks/CrowRx.Json.Benchmarks.csproj" />
 </Solution>

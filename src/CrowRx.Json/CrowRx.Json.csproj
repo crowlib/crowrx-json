@@ -7,7 +7,7 @@
 
 		<!-- NuGet -->
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.2</VersionPrefix>
+		<VersionPrefix>2.0.0</VersionPrefix>
 
 		<!-- Native 방지 -->
 		<UseNativeCompilation>false</UseNativeCompilation>
@@ -20,7 +20,7 @@
 		<Title>CrowRx.Json</Title>
 		<PackageTags>unity unity-editor</PackageTags>
 		<Authors>newhory</Authors>
-		<Description>A json library for CrowRx. This package is intended for use with Unity3D 6.0 or newer only.</Description>
+		<Description>Lightweight deterministic JSON serialization for .NET Standard 2.1 and Unity.</Description>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Version>$(VersionPrefix)</Version>
@@ -29,13 +29,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CrowRx.Core" Version="1.0.5"/>
-		<PackageReference Include="CrowRx.Pool" Version="1.0.3"/>
+		<None Include="LICENSE" Pack="true" PackagePath=""/>
+		<None Include="README.md" Pack="true" PackagePath=""/>
+		<None Include="API.md" Pack="true" PackagePath=""/>
+		<None Include="MIGRATION_1X_TO_2X.md" Pack="true" PackagePath=""/>
+		<None Include="SERIALIZATION_SPEC.md" Pack="true" PackagePath=""/>
+		<None Include="BENCHMARK_RESULTS.md" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="LICENSE" Pack="true" PackagePath=""/>
-		<None Include="README.md" Pack="true" PackagePath=""/>
+		<InternalsVisibleTo Include="CrowRx.Json.Tests"/>
+		<InternalsVisibleTo Include="CrowRx.Json.Benchmarks"/>
 	</ItemGroup>
 
 </Project>
