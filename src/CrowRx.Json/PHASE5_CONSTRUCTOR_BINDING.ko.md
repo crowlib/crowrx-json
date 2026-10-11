@@ -9,7 +9,7 @@
 - 생성자 선택은 `[JsonConstructor]`, 유일한 public 생성자, 여러 public 생성자 중 public parameterless 생성자 순서로 결정한다.
 - `[JsonConstructor]`는 non-public 생성자에도 적용되며 같은 타입에 둘 이상이면 모호성 오류다.
 - public 생성자가 여러 개이고 public parameterless 생성자도 없으면 reflection 반환 순서에 의존하지 않고 모호성 오류로 실패한다.
-- 생성자 매개변수는 대소문자를 구분해 `MemberContract.JsonName`과 연결한다.
+- 생성자 매개변수는 일반적인 camelCase/PascalCase 불변 DTO를 지원하도록 대소문자를 무시해 MemberContract.JsonName과 연결한다. 실제 JSON 입력 이름 비교는 JsonSerializerOptions.PropertyNameCaseInsensitive 정책을 따른다.
 - 매개변수와 멤버 타입이 다르거나 매개변수에 대응하는 직렬화 멤버가 없으면 계약 생성 단계에서 실패한다.
 - 생성자에 연결된 get-only property와 public readonly field를 왕복 계약에 포함한다.
 - 생성자에 연결되지 않은 read-only/computed 멤버의 기존 제외 정책은 유지한다.

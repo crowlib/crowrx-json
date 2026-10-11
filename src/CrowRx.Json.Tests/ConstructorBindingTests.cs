@@ -30,6 +30,21 @@ public sealed class ConstructorBindingTests
     }
 
     [Fact]
+    public void CamelCaseConstructorParameters_MatchPascalCaseMembers()
+    {
+        var source = new ConventionalImmutableDto(1.25f, 0.5f, true);
+
+        string json = JsonSerializer.Serialize(source);
+        ConventionalImmutableDto? result = JsonSerializer.Deserialize<ConventionalImmutableDto>(json);
+
+        Assert.Equal("{\"StopDistanceOffset\":1.25,\"PathUpdateInterval\":0.5,\"GiveUpIfTooFar\":true}", json);
+        Assert.NotNull(result);
+        Assert.Equal(source.StopDistanceOffset, result.StopDistanceOffset);
+        Assert.Equal(source.PathUpdateInterval, result.PathUpdateInterval);
+        Assert.Equal(source.GiveUpIfTooFar, result.GiveUpIfTooFar);
+    }
+
+    [Fact]
     public void PositionalRecord_RoundTrips()
     {
         var source = new PositionRecord(3, "record");
@@ -177,6 +192,23 @@ public sealed class ConstructorBindingTests
         }
     }
 
+    private sealed class ConventionalImmutableDto
+    {
+        public ConventionalImmutableDto(
+            float stopDistanceOffset,
+            float pathUpdateInterval,
+            bool giveUpIfTooFar)
+        {
+            StopDistanceOffset = stopDistanceOffset;
+            PathUpdateInterval = pathUpdateInterval;
+            GiveUpIfTooFar = giveUpIfTooFar;
+        }
+
+        public float StopDistanceOffset { get; }
+        public float PathUpdateInterval { get; }
+        public bool GiveUpIfTooFar { get; }
+    }
+
     private sealed record PositionRecord(int X, string Name);
 
     private sealed record RegularRecord
@@ -303,9 +335,9 @@ public sealed class ConstructorBindingTests
     {
         public int Value { get; }
 
-        public NameMismatchDto(int value)
+        public NameMismatchDto(int other)
         {
-            Value = value;
+            Value = other;
         }
     }
 

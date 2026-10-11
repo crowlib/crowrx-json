@@ -5,7 +5,7 @@ CrowRx.Json 2.x is a small deterministic JSON serializer for general-purpose C# 
 ## Install
 
 ```xml
-<PackageReference Include="CrowRx.Json" Version="2.0.0" />
+<PackageReference Include="CrowRx.Json" Version="2.0.1" />
 ```
 
 Unity 6 users can install the same package through NuGetForUnity.

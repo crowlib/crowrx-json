@@ -157,10 +157,11 @@ selected constructor when required.
 Constructor binding is part of the initial 2.x specification so that immutable
 DTOs and records can participate in round-trip serialization.
 
-Constructor parameters are matched to serialized member names. Matching is
-case-sensitive by default and follows the configured JSON naming policy. Every
-required constructor parameter must have a compatible JSON value or an
-explicit default value.
+Constructor parameters are matched case-insensitively to serialized member
+names so conventional camelCase parameters bind to PascalCase immutable DTO
+members. Actual JSON input name comparison follows the configured member
+matching policy. Every required constructor parameter must have a compatible
+JSON value or an explicit default value.
 
 Constructor selection must be deterministic. The initial implementation uses
 the following precedence:

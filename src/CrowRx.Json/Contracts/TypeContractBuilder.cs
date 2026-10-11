@@ -321,7 +321,7 @@ namespace CrowRx.Json
 
         private static HashSet<string> GetConstructorParameterNames(Type type, ConstructorInfo? constructor)
         {
-            var names = new HashSet<string>(StringComparer.Ordinal);
+            var names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             if (constructor is null)
             {
                 return names;
@@ -359,7 +359,18 @@ namespace CrowRx.Json
                 return null;
             }
 
-            var membersByName = members.ToDictionary(static member => member.JsonName, StringComparer.Ordinal);
+            var membersByName = new Dictionary<string, MemberContract>(StringComparer.OrdinalIgnoreCase);
+            foreach (MemberContract member in members)
+            {
+                if (!membersByName.TryAdd(member.JsonName, member))
+                {
+                    throw new TypeContractException(
+                        type,
+                        $"Serializable members collide under case-insensitive constructor binding for JSON name '{member.JsonName}'.",
+                        JsonErrorCategory.ConstructorBindingFailed);
+                }
+            }
+
             var parameters = new List<ConstructorParameterContract>();
             foreach (ParameterInfo parameter in constructor.GetParameters())
             {
@@ -380,7 +391,7 @@ namespace CrowRx.Json
                         JsonErrorCategory.ConstructorBindingFailed);
                 }
 
-                parameters.Add(new ConstructorParameterContract(parameterName, parameter, member));
+                parameters.Add(new ConstructorParameterContract(member.JsonName, parameter, member));
             }
 
             return new ConstructorContract(constructor, parameters.AsReadOnly());
