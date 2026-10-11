@@ -1,0 +1,4 @@
+{
+    "dotnet.defaultSolution": "src/CrowRx.Json/CrowRx.Json.slnx",
+    "dotnet.preferCSharpExtension": true
+}
